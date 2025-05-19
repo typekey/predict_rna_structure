@@ -6,7 +6,7 @@ process SPLIT_FASTA_FOLDERS {
     path transcriptome_fa
 
     output:
-    path 'sequence_group'       , emit: sequence_group
+    path 'sequence_group/group_*'       , emit: sequence_group
 
     script: 
     def bin = "${params.bin}"

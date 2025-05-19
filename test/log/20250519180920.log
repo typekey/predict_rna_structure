@@ -1,0 +1,81 @@
+May-19 18:09:22.882 [main] DEBUG nextflow.cli.Launcher - $> nextflow -log ./test/log/20250519180920.log run main.nf --outdir ./test/results -work-dir ./test/work --transcriptome_fa /home/leizheng/workspace/pipeline/predict_rna_structure/test/rawdata/test_m.fa --split_num 100 --shape_data /home/leizheng/workspace/pipeline/predict_rna_structure/test/rawdata/test_shape.bed --exon_data /home/leizheng/workspace/pipeline/predict_rna_structure/test/rawdata/test_exon.bed
+May-19 18:09:23.085 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.4
+May-19 18:09:23.128 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/leizheng/.nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.3,nf-tower@1.9.3,nf-wave@1.7.4
+May-19 18:09:23.155 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-19 18:09:23.157 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-19 18:09:23.163 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+May-19 18:09:23.196 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-19 18:09:23.241 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/leizheng/workspace/pipeline/predict_rna_structure/nextflow.config
+May-19 18:09:23.247 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/leizheng/workspace/pipeline/predict_rna_structure/nextflow.config
+May-19 18:09:23.295 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/leizheng/.nextflow/secrets/store.json
+May-19 18:09:23.301 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@5af97169] - activable => nextflow.secret.LocalSecretsProvider@5af97169
+May-19 18:09:23.326 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+May-19 18:09:25.201 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+May-19 18:09:25.227 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [cheesy_coulomb] DSL2 - revision: 0d2d7924dc
+May-19 18:09:25.231 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-19 18:09:25.231 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+May-19 18:09:25.355 [main] DEBUG nextflow.Session - Session UUID: 0a47f829-5b61-43cd-979e-82f731c76df0
+May-19 18:09:25.356 [main] DEBUG nextflow.Session - Run name: cheesy_coulomb
+May-19 18:09:25.357 [main] DEBUG nextflow.Session - Executor pool size: 144
+May-19 18:09:25.374 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+May-19 18:09:25.383 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=432; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-19 18:09:25.409 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.4 build 5934
+  Created: 20-01-2025 16:47 UTC (10:47 CDT)
+  System: Linux 6.8.0-38-generic
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 790842@helab0 [127.0.1.1]
+  CPUs: 144 - Mem: 1.5 TB (299.6 GB) - Swap: 1.5 TB (687.6 GB)
+May-19 18:09:25.452 [main] DEBUG nextflow.Session - Work-dir: /home/leizheng/workspace/pipeline/predict_rna_structure/test/work [ext2/ext3]
+May-19 18:09:25.572 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-19 18:09:25.643 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+May-19 18:09:25.728 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-19 18:09:25.751 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 145; maxThreads: 1000
+May-19 18:09:25.864 [main] DEBUG nextflow.Session - Session start
+May-19 18:09:25.877 [main] DEBUG nextflow.Session - Using default localLib path: /home/leizheng/workspace/pipeline/predict_rna_structure/lib
+May-19 18:09:25.883 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/leizheng/workspace/pipeline/predict_rna_structure/lib
+May-19 18:09:26.104 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-19 18:09:26.785 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ZL:PREDICT_RNA_STRUCTURE:SPLIT_FASTA_FOLDERS
+May-19 18:09:26.907 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-19 18:09:26.908 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-19 18:09:26.926 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+May-19 18:09:26.937 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=144; memory=1.5 TB; capacity=144; pollInterval=100ms; dumpInterval=5m
+May-19 18:09:26.941 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+May-19 18:09:27.132 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ZL:PREDICT_RNA_STRUCTURE:EXTRACT_SHAPE_DATA
+May-19 18:09:27.134 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-19 18:09:27.135 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-19 18:09:27.149 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name ZL:PREDICT_RNA_STRUCTURE:PREDICT_RNA_STRUCTURE_RNAFOLD
+May-19 18:09:27.152 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+May-19 18:09:27.152 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-19 18:09:27.159 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: SPLIT_FASTA_FOLDERS, EXTRACT_SHAPE_DATA, PREDICT_RNA_STRUCTURE_RNAFOLD, ZL:PREDICT_RNA_STRUCTURE:PREDICT_RNA_STRUCTURE_RNAFOLD, ZL:PREDICT_RNA_STRUCTURE:EXTRACT_SHAPE_DATA, ZL:PREDICT_RNA_STRUCTURE:SPLIT_FASTA_FOLDERS
+May-19 18:09:27.160 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+May-19 18:09:27.161 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ZL:PREDICT_RNA_STRUCTURE:SPLIT_FASTA_FOLDERS
+May-19 18:09:27.162 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ZL:PREDICT_RNA_STRUCTURE:EXTRACT_SHAPE_DATA
+May-19 18:09:27.164 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ZL:PREDICT_RNA_STRUCTURE:PREDICT_RNA_STRUCTURE_RNAFOLD
+May-19 18:09:27.166 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_579d5e0834d6d0ce: /home/leizheng/workspace/pipeline/predict_rna_structure/./workflows/../modules/local/predict_rna_structure_rnafold/main.nf
+  Script_a9fabd2759cc0cfb: /home/leizheng/workspace/pipeline/predict_rna_structure/./workflows/predict_rna_structure.nf
+  Script_0532f754e9209450: /home/leizheng/workspace/pipeline/predict_rna_structure/main.nf
+  Script_c047b6f7d85359fe: /home/leizheng/workspace/pipeline/predict_rna_structure/./workflows/../modules/local/split_fasta_folders/main.nf
+  Script_9f754a1f468054f3: /home/leizheng/workspace/pipeline/predict_rna_structure/./workflows/../modules/local/extract_shape_data/main.nf
+May-19 18:09:27.167 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+May-19 18:09:27.172 [main] DEBUG nextflow.Session - Session await
+May-19 18:09:27.715 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-19 18:09:27.723 [Task submitter] INFO  nextflow.Session - [68/27b000] Submitted process > ZL:PREDICT_RNA_STRUCTURE:EXTRACT_SHAPE_DATA (test_shape.bed)
+May-19 18:09:27.753 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-19 18:09:27.754 [Task submitter] INFO  nextflow.Session - [56/151169] Submitted process > ZL:PREDICT_RNA_STRUCTURE:SPLIT_FASTA_FOLDERS (test_m.fa)
+May-19 18:09:27.868 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: ZL:PREDICT_RNA_STRUCTURE:SPLIT_FASTA_FOLDERS (test_m.fa); status: COMPLETED; exit: 0; error: -; workDir: /home/leizheng/workspace/pipeline/predict_rna_structure/test/work/56/151169758e17f28af9f3e4358bb8c7]
+May-19 18:09:27.876 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=432; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-19 18:09:29.186 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: ZL:PREDICT_RNA_STRUCTURE:EXTRACT_SHAPE_DATA (test_shape.bed); status: COMPLETED; exit: 0; error: -; workDir: /home/leizheng/workspace/pipeline/predict_rna_structure/test/work/68/27b000684394895ee6a01b83740d27]
+May-19 18:09:29.250 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-19 18:09:29.251 [Task submitter] INFO  nextflow.Session - [7e/89a6a8] Submitted process > ZL:PREDICT_RNA_STRUCTURE:PREDICT_RNA_STRUCTURE_RNAFOLD (group_1)
+May-19 18:09:29.289 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: ZL:PREDICT_RNA_STRUCTURE:PREDICT_RNA_STRUCTURE_RNAFOLD (group_1); status: COMPLETED; exit: 0; error: -; workDir: /home/leizheng/workspace/pipeline/predict_rna_structure/test/work/7e/89a6a8dda877363e1e738498ec24f6]
+May-19 18:09:29.293 [main] DEBUG nextflow.Session - Session await > all processes finished
+May-19 18:09:29.384 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+May-19 18:09:29.385 [main] DEBUG nextflow.Session - Session await > all barriers passed
+May-19 18:09:29.393 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+May-19 18:09:29.407 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=3; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=8.5s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=12; peakMemory=108 GB; ]
+May-19 18:09:29.608 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+May-19 18:09:29.637 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+May-19 18:09:29.638 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

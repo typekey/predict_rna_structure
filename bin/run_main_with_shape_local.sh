@@ -13,17 +13,17 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=leizheng@uchicago.edu
 
-RNAfold="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/bin/RNAfold"
-RNAplot="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/bin/RNAplot"
-RNAfold_b2mt="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/share/ViennaRNA/bin/b2mt.pl"
-bprna="/home/leizheng/data/workspace/rbrowser/rna_structure/rna_structure_db/bpRNA/bpRNA.pl"
-perl="/scratch/midway3/leizheng/mambaforge/bin/perl"
-# RNAfold="/home/leizheng/biotools/mamba/bin/RNAfold"
-# RNAplot="/home/leizheng/biotools/mamba/bin/RNAplot"
-# RNAfold_b2mt="/home/leizheng/biotools/mamba/share/ViennaRNA/bin/b2mt.pl"
-# bprna="/home/leizheng/biotools/bpRNA/bpRNA.pl"
-# perl="/home/leizheng/biotools/mamba/bin/perl"
-# build_r2s="/home/leizheng/workspace/pipeline/predict_rna_structure/bin/build_r2s.py"
+# RNAfold="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/bin/RNAfold"
+# RNAplot="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/bin/RNAplot"
+# RNAfold_b2mt="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/share/ViennaRNA/bin/b2mt.pl"
+# bprna="/home/leizheng/data/workspace/rbrowser/rna_structure/rna_structure_db/bpRNA/bpRNA.pl"
+# perl="/scratch/midway3/leizheng/mambaforge/bin/perl"
+RNAfold="/home/leizheng/biotools/mamba/bin/RNAfold"
+RNAplot="/home/leizheng/biotools/mamba/bin/RNAplot"
+RNAfold_b2mt="/home/leizheng/biotools/mamba/share/ViennaRNA/bin/b2mt.pl"
+bprna="/home/leizheng/biotools/bpRNA/bpRNA.pl"
+perl="/home/leizheng/biotools/mamba/bin/perl"
+build_r2s="/home/leizheng/workspace/pipeline/predict_rna_structure/bin/build_r2s.py"
 
 # base_dir=/home/leizheng/data/workspace/rbrowser/rna_structure/rna_structure_db
 # shape_dir=/home/leizheng/data/workspace/rbrowser/rna_structure/analysis/build_r2s_file_with_shape/shape_icSHAPE_MB2019

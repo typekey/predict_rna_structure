@@ -62,6 +62,7 @@ def get_score(rna_id, out_dir):
             index += 1
     rna_shape_df = rna_shape_df.loc[:, ['index', 'score']]
     rna_shape_df['index'] = rna_shape_df['index'].astype(int)
+    rna_id = rna_id.split(".")[0]
     rna_shape_df.to_csv(f'{out_dir}/{rna_id}.shape', sep="\t", index=False, header=False)
 
 # Helper function for multiprocessing
