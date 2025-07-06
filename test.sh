@@ -1,11 +1,13 @@
-# module load singularity
-BASEPATH=./test
-WORKDIR=$BASEPATH/work
-OUTDIR=$BASEPATH/results
-TRANSCRIPTOME_FASTA="/home/leizheng/workspace/pipeline/predict_rna_structure/test/rawdata/test_m.fa"
+module load singularity
+BASEPATH=/project/mengjiechen/leizheng/pipeline/predict_rna_structure/test
+WORKDIR=$BASEPATH/work_test
+OUTDIR=$BASEPATH/results_test
+TRANSCRIPTOME_FASTA="/project/mengjiechen/leizheng/references/Homo_sapiens/GENCODE/GRCh38/sequence/transcriptome/gencode.v44.transcripts.fa"
+TRANSCRIPTOME_FASTA="/project/mengjiechen/leizheng/pipeline/predict_rna_structure/test/test.fa"
+TRANSCRIPTOME_FASTA="/project/mengjiechen/leizheng/pipeline/predict_rna_structure/test/rawdata/test_m.fa"
 
-shape_data='/home/leizheng/workspace/pipeline/predict_rna_structure/test/rawdata/test_shape.bed'
-exon_data='/home/leizheng/workspace/pipeline/predict_rna_structure/test/rawdata/test_exon.bed'
+shape_data='/project/mengjiechen/leizheng/pipeline/predict_rna_structure/test/rawdata/test_shape.bed'
+exon_data='/project/mengjiechen/leizheng/pipeline/predict_rna_structure/test/rawdata/test_exon.bed'
 
 current_datetime=$(date "+%Y%m%d%H%M%S")
 LOGPATH=$BASEPATH/log

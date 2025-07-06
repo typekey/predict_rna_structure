@@ -19,13 +19,15 @@ workflow PREDICT_RNA_STRUCTURE {
     SPLIT_FASTA_FOLDERS(
         params.transcriptome_fa
     )
-    ch_split_fasta_folders = SPLIT_FASTA_FOLDERS.out.sequence_group
+    ch_split_fasta_folders = SPLIT_FASTA_FOLDERS.out.sequence_group.flatten()
 
     EXTRACT_SHAPE_DATA(
         params.shape_data,
         params.exon_data
     )
     ch_extract_shape_data = EXTRACT_SHAPE_DATA.out.shape
+
+    ch_split_fasta_folders
 
     PREDICT_RNA_STRUCTURE_RNAFOLD(
         ch_split_fasta_folders,

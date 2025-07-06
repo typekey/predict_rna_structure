@@ -13,17 +13,18 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=leizheng@uchicago.edu
 
-RNAfold="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/bin/RNAfold"
-RNAplot="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/bin/RNAplot"
-RNAfold_b2mt="/scratch/midway3/leizheng/mambaforge/envs/rna_structure/share/ViennaRNA/bin/b2mt.pl"
+RNAfold="/project/mengjiechen/leizheng/biotools/mambaforge/bin/RNAfold"
+RNAplot="/project/mengjiechen/leizheng/biotools/mambaforge/bin/RNAplot"
+RNAfold_b2mt="/project/mengjiechen/leizheng/biotools/mambaforge/share/ViennaRNA/bin/b2mt.pl"
 bprna="/home/leizheng/data/workspace/rbrowser/rna_structure/rna_structure_db/bpRNA/bpRNA.pl"
-perl="/scratch/midway3/leizheng/mambaforge/bin/perl"
+perl="/project/mengjiechen/leizheng/biotools/mambaforge/bin/perl"
 # RNAfold="/home/leizheng/biotools/mamba/bin/RNAfold"
 # RNAplot="/home/leizheng/biotools/mamba/bin/RNAplot"
 # RNAfold_b2mt="/home/leizheng/biotools/mamba/share/ViennaRNA/bin/b2mt.pl"
 # bprna="/home/leizheng/biotools/bpRNA/bpRNA.pl"
 # perl="/home/leizheng/biotools/mamba/bin/perl"
 # build_r2s="/home/leizheng/workspace/pipeline/predict_rna_structure/bin/build_r2s.py"
+build_r2s="/project/mengjiechen/leizheng/pipeline/predict_rna_structure/bin/build_r2s.py"
 
 # base_dir=/home/leizheng/data/workspace/rbrowser/rna_structure/rna_structure_db
 # shape_dir=/home/leizheng/data/workspace/rbrowser/rna_structure/analysis/build_r2s_file_with_shape/shape_icSHAPE_MB2019
@@ -91,10 +92,21 @@ export -f process_rna
 export RNAfold RNAplot RNAfold_b2mt bprna perl base_dir shape_dir build_r2s
 
 # find -L ${base_dir} -name "*.fasta" | xargs -P $threads -I {} bash -c 'process_rna "$@"' _ {}
+# find -L "${base_dir}" -name "*.fasta" | \
+# xargs -P "${threads}" -I {} bash -c '
+#     fasta="{}"
+#     rna_id=$(basename "$fasta" .fasta)
+#     mkdir -p "./results/${rna_id}"
+#     process_rna "$fasta" > "./results/${rna_id}/${rna_id}.log" 2> "./results/${rna_id}/${rna_id}.err"
+# '
+
 find -L "${base_dir}" -name "*.fasta" | \
 xargs -P "${threads}" -I {} bash -c '
     fasta="{}"
     rna_id=$(basename "$fasta" .fasta)
     mkdir -p "./results/${rna_id}"
-    process_rna "$fasta" > "./results/${rna_id}/${rna_id}.log" 2> "./results/${rna_id}/${rna_id}.err"
+    process_rna "$fasta" \
+      > >(tee "./results/${rna_id}/${rna_id}.log") \
+      2> >(tee "./results/${rna_id}/${rna_id}.err" >&2)
 '
+
