@@ -1,4 +1,4 @@
-# Predict RNA Structure
+# Predict RNA 2D Structure
 
 ![Version](https://img.shields.io/badge/version-v1.0-blue)
 ![Workflow](https://img.shields.io/badge/workflow-Nextflow-brightgreen)
